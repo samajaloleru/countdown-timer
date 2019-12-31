@@ -1,0 +1,87 @@
+<!DOCTYPE HTML> 
+<html> 
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href = "animate.css" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        #clockdiv{ 
+            font-family: sans-serif; 
+            color: #fff; 
+            display: inline-block; 
+            font-weight: 100; 
+            text-align: center; 
+            font-size: 30px; 
+        } 
+        #clockdiv > div{ 
+            display: inline-block; 
+        } 
+        #clockdiv div > span{
+            display: inline-block; 
+        }
+    </style>
+</head> 
+<body class="bg-navy white">
+    <div class="fl w-100 h3"></div>
+    <div class="cf w-100">
+        <img src="whitelogo.png" class="animated infinite bounce delay-5s center db h5" >
+        <h1 class="f1 pt3 tc">New Year Countdown</h1> 
+        <div class="cf center mw9"> 
+            <div class="fl w-100 pt5" id="clockdiv">  
+                <div class="fl w-third pa3">
+                    <article class="mw5 center bg-washed-yellow navy br3 pa3 pa4-ns mv3 ba b--black-10">
+                        <div class="tc">
+                            <span class="f-headline fw6 mb2" id="hour"></span> 
+                            <div class="f3">Hours</div> 
+                        </div>
+                    </article>
+                </div> 
+                <div class="fl w-third pa3">
+                    <article class="mw5 center bg-washed-yellow navy br3 pa3 pa4-ns mv3 ba b--black-10">
+                        <div class="tc">
+                            <span class="f-headline fw6 mb2" id="minute"></span> 
+                            <div class="f3">Minutes</div> 
+                        </div>
+                    </article>
+                </div> 
+                <div class="fl w-third pa3">
+                    <article class="mw5 center bg-washed-yellow navy br3 pa3 pa4-ns mv3 ba b--black-10">
+                        <div class="tc">
+                            <span class="f-headline fw6 mb2" id="second"></span> 
+                            <div class="f3">Seconds</div> 
+                        </div>
+                    </article>
+                </div> 
+            </div> 
+        </div> 
+        
+        <p class="fw6 tc f1" id="demo"></p> 
+    </div>
+  
+<script> 
+  
+var deadline = new Date("dec 31, 2019 23:59:59").getTime(); 
+  
+var x = setInterval(function() { 
+  
+var now = new Date().getTime(); 
+var t = deadline - now; 
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60)); 
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60)); 
+var seconds = Math.floor((t % (1000 * 60)) / 1000); 
+document.getElementById("hour").innerHTML =hours; 
+document.getElementById("minute").innerHTML = minutes;  
+document.getElementById("second").innerHTML =seconds;  
+if (t < 0) { 
+        clearInterval(x); 
+        document.getElementById("demo").innerHTML = "HAPPY NEW YEAR TO ALL CELESTIANS ALL OVER THE WORLD"; 
+        document.getElementById("hour").innerHTML ='0'; 
+        document.getElementById("minute").innerHTML ='0' ;  
+        document.getElementById("second").innerHTML = '0'; } 
+}, 1000); 
+</script> 
+</body> 
+</html> 
