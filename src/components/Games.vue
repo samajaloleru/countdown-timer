@@ -1,64 +1,60 @@
 <template>
   <div class="h-100 flex overflow-auto flex-column bg-black-10 vh-100">
-    <div v-if="!isComplete">
-      <div class="fl mb2 mb0-ns w-100 tr">
-        <router-link to="/" class="fl pa3 no-underline">
-          <span class="bg-black-10 white hover-bg-light-pink hover-navy w-auto pa3 b br2">
-            Go To Home 
-          </span>
-        </router-link>
-        <span class="fr pa3">
-          <img width="130px" class="relative" src="../assets/img/logo.png"/>
-        </span>
-      </div>
-      <div class="cf center w-20 tc fw6 measure">
-        <div class="f1 heartbeat light-pink">
-          Tic Tac
-        </div>
-      </div>
-      <div class="cf mw5 tc center">
-        <div @click="resetGame" class="cf w-50-l f6 measure center pointer  hover-bg-black-30 hover-light-pink bg-light-pink navy b pa2 br2 mv4 tc">
-          Reset Game
-        </div>
-        <div class="relative flex flex-wrap items-center justify-center">
-          <div class="w-third br bb pa3 pointer hover-light-pink">
-            <input type="text" @click="checkB1(), getWinner()" id="b1" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
-          </div> 
-          <div class="w-third bl br bb pa3 pointer hover-light-pink">
-            <input type="text" @click="checkB2(), getWinner()" id="b2" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
-          </div> 
-          <div class="w-third bl bb pa3 pointer hover-light-pink">
-            <input type="text" @click="checkB3(), getWinner()" id="b3" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
-          </div> 
-          
-          <div class="w-third br bb pa3 pointer hover-light-pink">
-            <input type="text" @click="checkB4(), getWinner()" id="b4" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
-          </div> 
-          <div class="w-third bl br bb pa3 pointer hover-light-pink">
-            <input type="text" @click="checkB5(), getWinner()" id="b5" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
-          </div> 
-          <div class="w-third bl bb pa3 pointer hover-light-pink">
-            <input type="text" @click="checkB6(), getWinner()" id="b6" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
-          </div> 
-          
-          <div class="w-third br pa3 pointer hover-light-pink">
-            <input type="text" @click="checkB7(), getWinner()" id="b7" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
-          </div> 
-          <div class="w-third bl br pa3 pointer hover-light-pink">
-            <input type="text" @click="checkB8(), getWinner()" id="b8" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
-          </div> 
-          <div class="w-third bl pa3 pointer hover-light-pink">
-            <input type="text" @click="checkB9(), getWinner()" id="b9" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
-          </div> 
-          
-          
-        </div>
-      </div>
-      <div id="print" class="cf w-50-l f6 measure center hover-bg-black-30 hover-light-pink bg-light-pink navy b pv3 ph2 br2 mt4 tc">
-        Player X Start game
+    <div class="fl w-100">
+      <router-link to="/" class="fl mt3 no-underline bg-black-10 white hover-bg-light-pink hover-navy w-auto pa3 b br2">
+        Go To Home 
+      </router-link>
+
+      <div class="fr right-0">
+        <img class="w4" src="../assets/img/logo.png"/>
       </div>
     </div>
-    
+    <div class="cf center w-20-l tc fw6 measure">
+      <div class="f1 heartbeat light-pink">
+        Tic Tac
+      </div>
+    </div>
+    <div class="cf mw5 tc center">
+      <div @click="resetGame" class="cf w-50-l f6 measure center pointer  hover-bg-black-30 hover-light-pink bg-light-pink navy b pa2 br2 mv4 tc">
+        Reset Game
+      </div>
+      <div class="relative flex flex-wrap items-center justify-center">
+        <div class="w-third br bb pa3 pointer hover-light-pink">
+          <input type="text" @click="checkB1(), getWinner()" id="b1" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
+        </div> 
+        <div class="w-third bl br bb pa3 pointer hover-light-pink">
+          <input type="text" @click="checkB2(), getWinner()" id="b2" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
+        </div> 
+        <div class="w-third bl bb pa3 pointer hover-light-pink">
+          <input type="text" @click="checkB3(), getWinner()" id="b3" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
+        </div> 
+        
+        <div class="w-third br bb pa3 pointer hover-light-pink">
+          <input type="text" @click="checkB4(), getWinner()" id="b4" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
+        </div> 
+        <div class="w-third bl br bb pa3 pointer hover-light-pink">
+          <input type="text" @click="checkB5(), getWinner()" id="b5" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
+        </div> 
+        <div class="w-third bl bb pa3 pointer hover-light-pink">
+          <input type="text" @click="checkB6(), getWinner()" id="b6" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
+        </div> 
+        
+        <div class="w-third br pa3 pointer hover-light-pink">
+          <input type="text" @click="checkB7(), getWinner()" id="b7" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
+        </div> 
+        <div class="w-third bl br pa3 pointer hover-light-pink">
+          <input type="text" @click="checkB8(), getWinner()" id="b8" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
+        </div> 
+        <div class="w-third bl pa3 pointer hover-light-pink">
+          <input type="text" @click="checkB9(), getWinner()" id="b9" readonly class="w2 h2 bg-transparent light-pink f2 inputfield tc" >
+        </div> 
+        
+        
+      </div>
+    </div>
+    <div id="print" class="cf w-50-l f6 measure center hover-bg-black-30 hover-light-pink bg-light-pink navy b pv3 ph2 br2 mv4 tc">
+      Player X Start game
+    </div>    
     
     <div class="fl b black-10 absolute w-100 bottom-0">
       Built by Authentic Sam & Ife

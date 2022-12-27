@@ -1,15 +1,14 @@
 <template>
   <div class="h-100 flex overflow-auto flex-column bg-black-10 vh-100">
     <div v-if="!isComplete">
-      <div class="fl mb2 mb0-ns w-100 tr">
-        <router-link to="/games" class="fl pa3 no-underline">
-          <span class="bg-black-10 white hover-bg-light-pink hover-navy w-auto pa3 b br2">
-            Play Games
-          </span>
+      <div class="fl w-100">
+        <router-link to="/games" class="fl mt3 no-underline bg-black-10 white hover-bg-light-pink hover-navy w-auto pa3 b br2">
+          Play Games 
         </router-link>
-        <span class="fr pa3">
-          <img width="130px" class="relative" src="../assets/img/logo.png"/>
-        </span>
+
+        <div class="fr right-0">
+          <img class="w4" src="../assets/img/logo.png"/>
+        </div>
       </div>
       <div class="cf center mw7 tc mv4 mv0-ns fw6 measure">
         <div class="typed-out light-pink pr2">
@@ -45,7 +44,7 @@
           </div>
         </div>
       </div>
-      <div class="cf tracking-in-expand-fwd w-50-l f6 measure center hover-bg-black-30 hover-light-pink bg-light-pink navy b pv3 ph2 br2 mt4 tc">
+      <div class="cf tracking-in-expand-fwd w-50-l f6 measure center hover-bg-black-30 hover-light-pink bg-light-pink navy b pv3 ph2 br2 mv4 tc">
         May this new year bring us a fantastic January, a brilliant February, a calm March, an anxiety-free April, a phenomenal May, and joy that lasts from June to November, with a happy December to cap it off.
       </div>
     </div>
