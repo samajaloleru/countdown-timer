@@ -2,11 +2,6 @@
   <div class="h-100 flex overflow-auto flex-column bg-black-10 vh-100">
     <div v-if="!isComplete">
       <div class="fl mb2 mb0-ns w-100 tr">
-        <router-link to="/games" class="fl pa3 no-underline">
-          <span class="bg-black-10 white hover-bg-light-pink hover-navy w-auto pa3 b br2">
-            Play Games
-          </span>
-        </router-link>
         <span class="fr pa3">
           <img width="130px" class="relative" src="../assets/img/logo.png"/>
         </span>
@@ -16,37 +11,9 @@
           Countdown to the Year 2023
         </div>
       </div>
-      <div class="cf mw7-ns mw5 mv4 mv0-ns tc center">
-        <div id="clockdiv" class="relative flex heartbeat flex-row items-center justify-center">
-          <div class="w-auto pa3 hover-light-pink br4">
-            <div class="fl w-100 f-subheadline-l f1-m f2 b days"></div>
-            <div class="fl w-100 f3-ns f4 b">Days</div>
-          </div> 
-          <div class="w-auto">
-            <div class="glow fl w-100">:</div>
-          </div> 
-          <div class="w-auto pa3 hover-light-pink br4">
-            <div class="fl w-100 f-subheadline-l f1-m f2 b hours">00</div>
-            <div class="fl w-100 f3-ns f4 b">Hours</div>
-          </div>
-          <div class="w-auto">
-            <div class="fl w-100">:</div>
-          </div>
-          <div class="w-auto pa3 hover-light-pink br4">
-            <div class="fl w-100 f-subheadline-l f1-m f2 b minutes">00</div>
-            <div class="fl w-100 f3-ns f4 b">Minutes</div>
-          </div>
-          <div class="w-auto">
-            <div class="fl w-100">:</div>
-          </div>
-          <div class="w-auto pa3 hover-light-pink br4">
-            <div class="fl w-100 f-subheadline-l f1-m f2 b seconds">00</div>
-            <div class="fl w-100 f3-ns f4 b">Seconds</div>
-          </div>
-        </div>
-      </div>
+      
       <div class="cf tracking-in-expand-fwd w-50-l f6 measure center hover-bg-black-30 hover-light-pink bg-light-pink navy b pv3 ph2 br2 mt4 tc">
-        May this new year bring us a fantastic January, a brilliant February, a calm March, an anxiety-free April, a phenomenal May, and joy that lasts from June to November, with a happy December to cap it off.
+          Not Found
       </div>
     </div>
     <video v-else autoplay muted loop id="myVideo">
@@ -61,7 +28,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'NotFound',
   data(){
     return{
       isComplete: false,
