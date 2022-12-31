@@ -98,7 +98,7 @@ export default {
           document.getElementById('b7').disabled = true;
           document.getElementById('b8').disabled = true;
           document.getElementById('b9').disabled = true;
-          window.alert('Player X won');
+          window.alert('Player X won ****Secret Word = AJOSE');
         } else if((b1 == 'x' || b1 == 'X') && (b4 == 'x' || b4 == 'X') && (b7 == 'x' || b7 == 'X')){
           document.getElementById('print').innerHTML = 'Player X won';
 
@@ -108,7 +108,7 @@ export default {
           document.getElementById('b6').disabled = true;
           document.getElementById('b8').disabled = true;
           document.getElementById('b9').disabled = true;
-          window.alert('Player X won');
+          window.alert('Player X won ****Secret Word = BADA');
         } else if((b7 == 'x' || b7 == 'X') && (b8 == 'x' || b8 == 'X') && (b9 == 'x' || b9 == 'X')){
           document.getElementById('print').innerHTML = 'Player X won';
 
@@ -118,7 +118,7 @@ export default {
           document.getElementById('b4').disabled = true;
           document.getElementById('b5').disabled = true;
           document.getElementById('b6').disabled = true;
-          window.alert('Player X won');
+          window.alert('Player X won ****Secret Word = OSHOFFA');
         } else if((b3 == 'x' || b3 == 'X') && (b6 == 'x' || b6 == 'X') && (b9 == 'x' || b9 == 'X')){
           document.getElementById('print').innerHTML = 'Player X won';
 
@@ -181,7 +181,7 @@ export default {
           document.getElementById('b7').disabled = true;
           document.getElementById('b8').disabled = true;
           document.getElementById('b9').disabled = true;
-          window.alert('Player O won');
+          window.alert('Player O won ****Secret Word = PAJASPA');
         } else if((b1 == 'o' || b1 == 'O') && (b4 == 'o' || b4 == 'O') && (b7 == 'o' || b7 == 'O')){
           document.getElementById('print').innerHTML = 'Player O won';
 
@@ -201,7 +201,7 @@ export default {
           document.getElementById('b4').disabled = true;
           document.getElementById('b5').disabled = true;
           document.getElementById('b6').disabled = true;
-          window.alert('Player O won');
+          window.alert('Player O won ****Secret Word = BASILLICA');
         } else if((b3 == 'o' || b3 == 'O') && (b6 == 'o' || b6 == 'O') && (b9 == 'o' || b9 == 'O')){
           document.getElementById('print').innerHTML = 'Player O won';
 
@@ -231,7 +231,7 @@ export default {
           document.getElementById('b6').disabled = true;
           document.getElementById('b8').disabled = true;
           document.getElementById('b9').disabled = true;
-          window.alert('Player O won');
+          window.alert('Player O won ****Secret Word = MOBIYINA');
         } else if((b2 == 'o' || b2 == 'O') && (b5 == 'o' || b5 == 'O') && (b8 == 'o' || b8 == 'O')){
           document.getElementById('print').innerHTML = 'Player O won';
 
@@ -251,7 +251,7 @@ export default {
           document.getElementById('b7').disabled = true;
           document.getElementById('b8').disabled = true;
           document.getElementById('b9').disabled = true;
-          window.alert('Player O won');
+          window.alert('Player O won ****Secret Word = ALTAR');
         }
         // CHECKING FOR TIE
         else if ((b1 == 'X' || b1 == 'O') && (b2 == 'X'
