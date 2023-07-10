@@ -1,59 +1,57 @@
 <template>
-  <div class="h-100 flex overflow-auto flex-column bg-black-10 vh-100">
-    <div v-if="!isComplete">
-      <div class="fl w-100">
-        <router-link to="/games" class="fl mt3 no-underline bg-black-10 white hover-bg-light-pink hover-navy w-auto pa3 b br2">
-          Play Games 
-        </router-link>
-
-        <div class="fr right-0">
-          <img class="w4" src="../assets/img/logo.png"/>
+  <div class="cf center mw8">
+    <div class="w-100 pa4 dt vh-100 gold">
+      <div class="dtc w-100 v-mid" v-if="!isComplete">
+        <div class="fl w-100">
+          <router-link to="/games" class="fl mt3 no-underline bg-near-gold white hover-bg-gold hover-navy w-auto pa3 b br2">
+            Play Games 
+          </router-link>
+  
+          <span class="fr right-0">
+            <img class="w4" src="../assets/img/logo.png"/>
+          </span>
+        </div>
+        <div class="fl w-100 f2-ns f5 tc near-white">
+          Countdown to Our Heritage Program
+        </div>
+        <div class="fl w-100 f5 tc gold">
+          <div class="cf mw7-ns mw5 mv4 mv0-ns tc center">
+            <div id="clockdiv" class="relative flex heartbeat flex-row items-center justify-center">
+              <div class="w-auto pa3 hover-gold br4">
+                <div class="fl w-100 f-headline-l f-6-m f2 b days"></div>
+                <div class="fl w-100 f3-ns f4 b">Days</div>
+              </div> 
+              <div class="w-auto">
+                <div class="fl w-100 f1">:</div>
+              </div> 
+              <div class="w-auto pa3 hover-gold br4">
+                <div class="fl w-100 f-headline-l f-6-m f2 b hours">00</div>
+                <div class="fl w-100 f3-ns f4 b">Hours</div>
+              </div>
+              <div class="w-auto">
+                <div class="fl w-100 f1">:</div>
+              </div>
+              <div class="w-auto pa3 hover-gold br4">
+                <div class="fl w-100 f-headline-l f-6-m f2 b minutes">00</div>
+                <div class="fl w-100 f3-ns f4 b">Minutes</div>
+              </div>
+              <div class="w-auto">
+                <div class="fl w-100 f1">:</div>
+              </div>
+              <div class="w-auto pa3 hover-gold br4">
+                <div class="fl w-100 f-headline-l f-6-m f2 b seconds">00</div>
+                <div class="fl w-100 f3-ns f4 b">Seconds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="fl w-100 center tc mt5">
+          <router-link to="/register" class="bg-gold pointer mt3 w-auto near-black br2 bold ttc no-underline pa2">
+            Click to register
+          </router-link>
         </div>
       </div>
-      <div class="cf center mw7 tc mv4 mv0-ns fw6 measure">
-        <div class="typed-out light-pink pr2">
-          Countdown to the Year 2023
-        </div>
-      </div>
-      <div class="cf mw7-ns mw5 mv4 mv0-ns tc center">
-        <div id="clockdiv" class="relative flex heartbeat flex-row items-center justify-center">
-          <div class="w-auto pa3 hover-light-pink br4">
-            <div class="fl w-100 f-headline-l f-6-m f2 b days"></div>
-            <div class="fl w-100 f3-ns f4 b">Days</div>
-          </div> 
-          <div class="w-auto">
-            <div class="glow fl w-100">:</div>
-          </div> 
-          <div class="w-auto pa3 hover-light-pink br4">
-            <div class="fl w-100 f-headline-l f-6-m f2 b hours">00</div>
-            <div class="fl w-100 f3-ns f4 b">Hours</div>
-          </div>
-          <div class="w-auto">
-            <div class="fl w-100">:</div>
-          </div>
-          <div class="w-auto pa3 hover-light-pink br4">
-            <div class="fl w-100 f-headline-l f-6-m f2 b minutes">00</div>
-            <div class="fl w-100 f3-ns f4 b">Minutes</div>
-          </div>
-          <div class="w-auto">
-            <div class="fl w-100">:</div>
-          </div>
-          <div class="w-auto pa3 hover-light-pink br4">
-            <div class="fl w-100 f-headline-l f-6-m f2 b seconds">00</div>
-            <div class="fl w-100 f3-ns f4 b">Seconds</div>
-          </div>
-        </div>
-      </div>
-      <div class="cf tracking-in-expand-fwd w-50-l f6 measure center hover-bg-black-30 hover-light-pink bg-light-pink navy b pv3 ph2 br2 mv4 tc">
-        May this new year bring us a fantastic January, a brilliant February, a calm March, an anxiety-free April, a phenomenal May, and joy that lasts from June to November, with a happy December to cap it off.
-      </div>
-    </div>
-    <video v-else autoplay muted loop id="myVideo">
-      <source src="../assets/img/bg-video.mp4" type="video/mp4">
-    </video>
-    
-    <div class="fl b black-20 absolute w-100 bottom-0">
-      Built by Authentic Sam & Ife
     </div>
   </div>
 </template>
@@ -64,7 +62,7 @@ export default {
   data(){
     return{
       isComplete: false,
-      deadline: new Date("dec 31, 2022 23:59:59"), daysSpan:'', hoursSpan: '', minutesSpan: '', secondsSpan: '', timeinterval: ''
+      deadline: new Date("oct 14, 2023 11:59:59"), daysSpan:'', hoursSpan: '', minutesSpan: '', secondsSpan: '', timeinterval: ''
     }
   },
   mounted(){

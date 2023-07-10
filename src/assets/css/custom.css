@@ -13,8 +13,21 @@
         border-bottom-style: solid;
         border-right-width: 0;
         border-top-width: 0;
+        border-bottom-width: 2;
+        border-left-width: 0;
+}
+
+.inputfield2 {
+        border-radius: 0;
+        border-bottom-style: solid;
+        border-right-width: 0;
+        border-top-width: 0;
         border-bottom-width: 0;
         border-left-width: 0;
+}
+
+*:focus {
+        outline: none;
 }
 
 body {
@@ -213,8 +226,8 @@ body {
         overflow: hidden;
         border-right: .15em solid white;
         white-space: nowrap;
-        animation: typing 2s steps(20, end) forwards infinite;
-        font-size: 1.9rem;
+        animation: typing 2s steps(5, end) forwards infinite;
+        /* font-size: 1.9rem; */
         width: 0;
 }
 @keyframes typing {
