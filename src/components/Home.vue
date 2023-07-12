@@ -2,16 +2,16 @@
   <div class="cf center mw8">
     <div class="w-100 pa4 dt vh-100 gold">
       <div class="dtc w-100 v-mid" v-if="!isComplete">
-        <div class="fl w-100">
-          <router-link to="/games" class="fl mt3 no-underline bg-near-gold white hover-bg-gold hover-navy w-auto pa3 b br2">
-            Play Games 
+        <div class="flex items-center justify-between w-100 pa1">
+          <router-link to="/games" class="fl mt3 no-underline near-white hover-bg-gold hover-near-black w-auto pa3 b br2">
+            Play Games
           </router-link>
   
           <span class="fr right-0">
             <img class="w4" src="../assets/img/logo.png"/>
           </span>
         </div>
-        <div class="fl w-100 f2-ns f5 tc near-white">
+        <div class="fl w-100 b f2-ns f5 tc near-white">
           Countdown to Our Heritage Program
         </div>
         <div class="fl w-100 f5 tc gold">
@@ -47,9 +47,14 @@
         </div>
   
         <div class="fl w-100 center tc mt5">
-          <router-link to="/register" class="bg-gold pointer mt3 w-auto near-black br2 bold ttc no-underline pa2">
+          <router-link to="/register" class="bg-gold pointer mt3 w-auto near-black br2 b f4-ns f5 grow ttc no-underline ph5 pa2">
             Click to register
           </router-link>
+        </div>
+      </div>
+      <div class="dtc w-100 v-mid" v-else>
+        <div class="fl w-100 f2 b tc near-white">
+          Hope You are at the program already.
         </div>
       </div>
     </div>

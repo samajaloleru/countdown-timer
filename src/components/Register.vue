@@ -16,18 +16,34 @@
         </div>
         <div class="fl w-100 near-black mv4 pa4-ns pa3">
           <div class="fl w-100">
-            Fill in your fields below
+            Fill in the fields below
           </div>
           <div class="fl w-100 pv3">
-            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black br2" placeholder="Full Name"/>
+            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Full Name"/>
           </div>
           <div class="fl w-100 pv3">
-            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black br2" placeholder="Rank"/>
+            <input type="email" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Email"/>
           </div>
           <div class="fl w-100 pv3">
-            <textarea type="text" class="fl w-100 inputfield pv2 bg-transparent near-black br2" placeholder="Question"></textarea>
+            <input type="tel" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Phone number"/>
           </div>
-          <div class="fl w-100 tc bg-near-black near-white mt2 br2 hover-bg-gold hover-near-black pv3">
+          <div class="fl w-100 pv3">
+            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Parish"/>
+          </div>
+          <div class="fl w-100 pv3">
+            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Rank"/>
+          </div>
+          <div class="fl w-100 pt3 mt2 pv2 bb bw1 b--gray">
+            <select class="fl w-100 inputfield2 bg-transparent near-black pt1">
+              <option value="" selected>Are You attending</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="fl w-100 pv3 bb bw1 b--gray">
+            <textarea type="text" class="fl w-100 h3 inputfield2 pt1 pv2 bg-transparent near-black" placeholder="Question"></textarea>
+          </div>
+          <div class="fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-gold hover-near-black pv3">
             Submit
           </div>
         </div>
