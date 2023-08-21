@@ -141,7 +141,7 @@
           setTimeout(() => {
             app.isComplete = true
             app.message = '';
-          }, 5000);
+          }, 4000);
           return
         }
 
@@ -152,7 +152,7 @@
           setTimeout(() => {
             app.isComplete = true
             app.message = '';
-          }, 5000);
+          }, 4000);
           return
         }
 
@@ -163,7 +163,7 @@
           setTimeout(() => {
             app.isComplete = true
             app.message = '';
-          }, 5000);
+          }, 4000);
           return
         }
         
@@ -179,12 +179,12 @@
         }
         client.create(doc)
           .then(() => {
-            app.message = 'You have registrated succesfully';
+            app.message = 'You have registered succesfully';
             app.resetForm();
             setTimeout(() => {
               app.$router.push({name: 'Home'});
               app.isComplete = true
-            }, 5000);
+            }, 4000);
           })
       }
 
