@@ -1,0 +1,95 @@
+<template>
+  <div class="cf center mw8">
+    <div class="w-100 pa4 dt vh-100 gold">
+      <div class="dtc w-100 v-mid" v-if="!isComplete">
+        <div class="flex items-center justify-between w-100 pa1">
+          <router-link to="/games" class="fl mt3 no-underline gold hover-bg-gold hover-near-black w-auto pa3 b br2">
+            Play Games
+          </router-link>
+  
+          <span class="fr right-0">
+            <img class="w5" src="../assets/img/logo.png"/>
+          </span>
+        </div>
+        <div class="fl w-100 b f2-ns f5 tc gold">
+          Countdown to Our Heritage Program
+        </div>
+        <div class="fl w-100 f5 tc near-black">
+          
+        </div>
+  
+        <div class="fl w-100 center tc mt5">
+          <router-link to="/register" class="bg-gold pointer mt3 w-auto near-black br2 b f4-ns f5 grow ttc no-underline ph5 pa2">
+            Click to register
+          </router-link>
+        </div>
+      </div>
+      <div class="dtc w-100 v-mid" v-else>
+        <div class="fl w-100 f2 b tc near-white">
+          Hope You are at the program already.
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Home',
+  data(){
+    return{
+      isComplete: false,
+      deadline: new Date("oct 14, 2023 11:59:59"), daysSpan:'', hoursSpan: '', minutesSpan: '', secondsSpan: '', timeinterval: ''
+    }
+  },
+  mounted(){
+    this.getCountdown()
+  },
+  methods: {
+    getCountdown(){      
+      this.initializeClock('clockdiv', this.deadline);
+    },
+    getTimeRemaining() {
+      const total = Date.parse(this.deadline) - Date.parse(new Date());
+      const seconds = Math.floor((total / 1000) % 60);
+      const minutes = Math.floor((total / 1000 / 60) % 60);
+      const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+      const days = Math.floor(total / (1000 * 60 * 60 * 24));
+      
+      return {
+        total,
+        days,
+        hours,
+        minutes,
+        seconds
+      };
+    },
+
+    initializeClock(id,) {
+      const clock = document.getElementById(id);
+      this.daysSpan = clock.querySelector('.days');
+      this.hoursSpan = clock.querySelector('.hours');
+      this.minutesSpan = clock.querySelector('.minutes');
+      this.secondsSpan = clock.querySelector('.seconds');
+      
+      this.updateClock();
+      
+      this.timeinterval = setInterval(this.updateClock, 1000);
+    },
+    updateClock() {
+        const t = this.getTimeRemaining(this.deadline);
+
+        this.daysSpan.innerHTML = t.days;
+        this.hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        this.minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        this.secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+          this.isComplete = true;
+          clearInterval(this.timeinterval);
+        }
+      }
+
+  }
+}
+</script>
