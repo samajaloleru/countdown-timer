@@ -8,43 +8,52 @@
           </router-link>
   
           <span class="fr right-0">
-            <img class="w4" src="../assets/img/logo.png"/>
+            <img class="w5" src="../assets/img/logo.png"/>
           </span>
         </div>
-        <div class="fl w-100 pb2 f4 tc gold">
+        <div class="fl w-100 pb2 b f4 tc gold">
           Registration
         </div>
         <div class="fl w-100 near-black mv4 pa4-ns pa3">
           <div class="fl w-100">
             Fill in the fields below
           </div>
-          <div class="fl w-100 pv3">
-            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Full Name"/>
+          <div v-if="message" class="fl w-100 b pv3 red">
+            {{ message }}
           </div>
           <div class="fl w-100 pv3">
-            <input type="email" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Email"/>
+            <label class="f7 b">Full Name</label>
+            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="e.g Cape. Eld. Bro James James" v-model="form.name"/>
           </div>
           <div class="fl w-100 pv3">
-            <input type="tel" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Phone number"/>
+            <label class="f7 b">Email</label>
+            <input type="email" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="james@mail.com" v-model="form.email"/>
           </div>
           <div class="fl w-100 pv3">
-            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Parish"/>
+            <label class="f7 b">Phone Number</label>
+            <input type="tel" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="070*********" v-model="form.mobile"/>
           </div>
           <div class="fl w-100 pv3">
-            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="Rank"/>
+            <label class="f7 b">Parish</label>
+            <input type="text" class="fl w-100 inputfield pv2 bg-transparent near-black" placeholder="C.C.C National Headquarter" v-model="form.parish"/>
           </div>
           <div class="fl w-100 pt3 mt2 pv2 bb bw1 b--gray">
-            <select class="fl w-100 inputfield2 bg-transparent near-black pt1">
-              <option value="" selected>Are You attending</option>
+            <label class="f7 b">Are You attending</label>
+            <select class="fl w-100 inputfield2 bg-transparent near-black pt1" v-model="form.attending">
+              <option value="" selected></option>
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
           </div>
           <div class="fl w-100 pv3 bb bw1 b--gray">
-            <textarea type="text" class="fl w-100 h3 inputfield2 pt1 pv2 bg-transparent near-black" placeholder="Question"></textarea>
+            <label class="f7 b">Question</label>
+            <textarea class="fl w-100 h3 inputfield2 pt1 pv2 bg-transparent near-black" v-model="form.question"></textarea>
           </div>
-          <div class="fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-gold hover-near-black pv3">
+          <div v-if="isComplete" @click="handleSumbit" class="pointer fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-gold hover-near-black pv3">
             Submit
+          </div>
+          <div v-else class="pointer fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-gold hover-near-black pv3">
+            Submiting ...
           </div>
         </div>
       </div>
@@ -53,19 +62,132 @@
 </template>
 
 <script>
-export default {
-  name: 'Home',
-  data(){
-    return{
-      isComplete: false,
-      deadline: new Date("oct 14, 2023 11:59:59"), daysSpan:'', hoursSpan: '', minutesSpan: '', secondsSpan: '', timeinterval: ''
-    }
-  },
-  mounted(){
-  },
-  methods: {
-   
+  import {EMAIL_REGEX} from '../utils/common';
+  import { client } from  '../utils/client';
+  import { getUserByEmail, getUserByMobile } from  '../utils/data';
 
+  export default {
+    name: 'Register',
+    data(){
+      return{
+        isComplete: true,
+        message: '',
+        form: {
+          name: '',
+          email: '',
+          mobile: '',
+          parish: '',
+          attending: '',
+          question: ''
+        }
+      }
+    },
+    mounted(){
+    },
+    methods: {
+      resetForm() {
+        const app = this
+        app.form.name = '';
+        app.form.email = '';
+        app.form.mobile = '';
+        app.form.parish = '';
+        app.form.attending = '';
+        app.form.question = '';
+      },
+      validateForm(){
+        const app = this
+        const {name, email, mobile, parish, attending} = app.form
+        let message = '';
+        if (!name) 
+          message = "FullName is required"
+        
+        else if (!email)
+          message = "Email must be provided"
+
+        else if (!EMAIL_REGEX.test(email))
+          message = "Email is not valid"
+
+        else if (!mobile) 
+          message = "Phone Number is required"
+
+        else if (!parish) 
+          message = "Parish is required"
+
+        else if (!attending) 
+          message = "Please indicate if you would be attending the program"
+        
+        return message
+      },
+
+      checkIfUserExistByEmail(){
+        const app = this;
+        const {email} = app.form;
+        return getUserByEmail(email);
+      },
+
+      checkIfUserExistByMobile(){
+        const app = this;
+        const {mobile} = app.form;
+        return getUserByMobile(mobile);
+      },
+
+      async handleSumbit(){
+        const app = this;
+        app.isComplete = false
+        const validator = app.validateForm();
+        
+        if (validator) {
+          app.message = validator
+          setTimeout(() => {
+            app.isComplete = true
+            app.message = '';
+          }, 5000);
+          return
+        }
+
+        const userExistByEmail = await app.checkIfUserExistByEmail();
+
+        if (userExistByEmail) {
+          app.message = 'Someone already registered with this email'
+          setTimeout(() => {
+            app.isComplete = true
+            app.message = '';
+          }, 5000);
+          return
+        }
+
+        const userExistByMobile = await app.checkIfUserExistByMobile();
+        
+        if (userExistByMobile) {
+          app.message = 'Someone already registered with this phone number'
+          setTimeout(() => {
+            app.isComplete = true
+            app.message = '';
+          }, 5000);
+          return
+        }
+        
+        // create user doc object
+        const doc = {
+          _type: 'user',
+          name: app.form.name.toLowerCase(),
+          email: app.form.email.toLowerCase(),
+          mobile: app.form.mobile,
+          parish: app.form.parish.toLowerCase(),
+          attending: app.form.attending.toLowerCase(),
+          question: app.form.question.toLowerCase(),
+        }
+        client.create(doc)
+          .then(() => {
+            app.message = 'You have registrated succesfully';
+            app.resetForm();
+            setTimeout(() => {
+              app.$router.push({name: 'Home'});
+              app.isComplete = true
+            }, 5000);
+          })
+      }
+
+    }
   }
-}
 </script>

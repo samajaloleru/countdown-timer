@@ -3,18 +3,18 @@
     <div class="w-100 pa4 dt vh-100 gold">
       <div class="dtc w-100 v-mid" v-if="!isComplete">
         <div class="flex items-center justify-between w-100 pa1">
-          <router-link to="/games" class="fl mt3 no-underline near-white hover-bg-gold hover-near-black w-auto pa3 b br2">
+          <router-link to="/games" class="fl mt3 no-underline gold hover-bg-gold hover-near-black w-auto pa3 b br2">
             Play Games
           </router-link>
   
           <span class="fr right-0">
-            <img class="w4" src="../assets/img/logo.png"/>
+            <img class="w5" src="../assets/img/logo.png"/>
           </span>
         </div>
-        <div class="fl w-100 b f2-ns f5 tc near-white">
+        <div class="fl w-100 b f2-ns f5 tc gold">
           Countdown to Our Heritage Program
         </div>
-        <div class="fl w-100 f5 tc gold">
+        <div class="fl w-100 f5 tc near-black">
           <div class="cf mw7-ns mw5 mv4 mv0-ns tc center">
             <div id="clockdiv" class="relative flex heartbeat flex-row items-center justify-center">
               <div class="w-auto pa3 hover-gold br4">
