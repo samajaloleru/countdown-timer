@@ -1,5 +1,6 @@
 <template>
   <div class="w-100 pa4-ns pa2 dt vh-100 gold">
+    
     <div class="dtc w-100 v-mid">
       <div class="cf center mw7 mw6-l bg-near-white br3 shadow-3">
         <div class="flex items-center justify-between w-100 pa1">
@@ -49,15 +50,21 @@
             <label class="f7 b">Question</label>
             <textarea class="fl w-100 h3 inputfield2 pt1 pv2 bg-transparent near-black" v-model="form.question"></textarea>
           </div>
-          <div v-if="isComplete" @click="handleSumbit" class="pointer fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-gold hover-near-black pv3">
+          <div v-if="isSubmit" @click="handleSumbit" class="pointer fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-gold hover-near-black pv3">
             Submit
           </div>
           <div v-else class="pointer fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-gold hover-near-black pv3">
-            Submiting ...
+            <i class="f7 fas fa-spinner fa-spin"></i> Submiting ...
           </div>
         </div>
       </div>
     </div>
+    <popupsuccess
+      ref="return"
+      :editable="false"
+      :class="{ dn: !isPopup }"
+      @showPopup="showPopup"
+    />
   </div>
 </template>
 
@@ -66,11 +73,14 @@
   import { client } from  '../utils/client';
   import { getUserByEmail, getUserByMobile } from  '../utils/data';
 
+  import popupsuccess from '../components/reuseables/popup-success.vue';
+
   export default {
     name: 'Register',
     data(){
       return{
-        isComplete: true,
+        isSubmit: true,
+        isPopup: false,
         message: '',
         form: {
           name: '',
@@ -82,9 +92,12 @@
         }
       }
     },
-    mounted(){
-    },
+    components: { popupsuccess },
     methods: {
+      showPopup() {
+        this.isPopup = !this.isPopup;
+      },
+     
       resetForm() {
         const app = this
         app.form.name = '';
@@ -133,13 +146,13 @@
 
       async handleSumbit(){
         const app = this;
-        app.isComplete = false
+        app.isSubmit = false
         const validator = app.validateForm();
         
         if (validator) {
           app.message = validator
           setTimeout(() => {
-            app.isComplete = true
+            app.isSubmit = true
             app.message = '';
           }, 4000);
           return
@@ -150,7 +163,7 @@
         if (userExistByEmail) {
           app.message = 'Someone already registered with this email'
           setTimeout(() => {
-            app.isComplete = true
+            app.isSubmit = true
             app.message = '';
           }, 4000);
           return
@@ -161,7 +174,7 @@
         if (userExistByMobile) {
           app.message = 'Someone already registered with this phone number'
           setTimeout(() => {
-            app.isComplete = true
+            app.isSubmit = true
             app.message = '';
           }, 4000);
           return
@@ -179,12 +192,11 @@
         }
         client.create(doc)
           .then(() => {
-            app.message = 'You have registered succesfully';
-            app.resetForm();
             setTimeout(() => {
-              app.$router.push({name: 'Home'});
-              app.isComplete = true
-            }, 4000);
+              app.resetForm();
+              app.isSubmit = true
+              app.showPopup()
+            }, 2000);
           })
       }
 

@@ -47,13 +47,13 @@
         </div>
   
         <div class="fl w-100 center tc mt5">
-          <router-link to="/register" class="bg-gold pointer mt3 w-auto near-black br2 b f4-ns f5 grow ttc no-underline ph5 pa2">
+          <router-link to="/register" class="bg-gold hover-bg-near-black pointer mt3 w-auto near-black hover-near-white br2 b f4-ns f5 grow ttc no-underline ph5 pa2">
             Click to register
           </router-link>
         </div>
       </div>
       <div class="dtc w-100 v-mid" v-else>
-        <div class="fl w-100 f2 b tc near-white">
+        <div class="fl w-100 f2 b tc near-black">
           Hope You are at the program already.
         </div>
       </div>
