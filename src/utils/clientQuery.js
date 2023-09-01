@@ -54,6 +54,18 @@ export const searchQuery = (searchTerm) => {
   return query;
 };
 
+export const allUserQuery = () => {
+  const query = `*[_type == "user"]{
+    _id,
+    email,
+    mobile,
+    name,
+    parish,
+    question,
+  } | order(_createdAt desc)`;
+  return query;
+};
+
 export const userQuery = (userId) => {
   const query = `*[_type == "user" && _id == '${userId}']`;
   return query;

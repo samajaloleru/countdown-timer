@@ -1,32 +1,51 @@
 <template>
+  <video id="myVideo" autoplay muted loop>
+    <source src="../assets/img/bg-video.mp4" type="video/mp4" />
+  </video>
   <div class="cf center mw8">
-    <div class="w-100 pa4 dt vh-100 gold">
-      <div class="dtc w-100 v-mid" v-if="!isComplete">
-        <div class="flex items-center justify-between w-100 pa1">
-          <router-link to="/games" class="fl mt3 no-underline gold hover-bg-gold hover-near-black w-auto pa3 b br2">
-            Play Games
-          </router-link>
-  
-          <span class="fr right-0">
-            <img class="w5" src="../assets/img/logo.png"/>
-          </span>
-        </div>
-        <div class="fl w-100 b f2-ns f5 tc gold">
-          Countdown to Our Heritage Program
-        </div>
-        <div class="fl w-100 f5 tc near-black">
-          
-        </div>
-  
-        <div class="fl w-100 center tc mt5">
-          <router-link to="/register" class="bg-gold pointer mt3 w-auto near-black br2 b f4-ns f5 grow ttc no-underline ph5 pa2">
-            Click to register
-          </router-link>
-        </div>
-      </div>
-      <div class="dtc w-100 v-mid" v-else>
-        <div class="fl w-100 f2 b tc near-white">
-          Hope You are at the program already.
+    <div class="w-100 pa4 dt vh-100">
+      <div class="dtc v-mid">
+        <div
+          class="flex flex-column w-100 justify-center bg-near-white near-black pa4 br4"
+        >
+          <div class="flex items-center justify-between w-100 pa1">
+            <div class="b">
+              No Of Registered Users : <span class="f2">{{ users.length }}</span>
+            </div>
+            <div class="">
+              <img class="w5" src="../assets/img/logo.png" />
+            </div>
+          </div>
+          <div class="flex flex-row w-100 pv3 bb bw3 b b--gold near-black">
+            <div class="w-30">Full Name</div>
+            <div class="w-25 pl3">Email/Phone Number</div>
+            <div class="w-50 pl3">Action</div>
+          </div>
+          <div class="flex flex-column w-100 pt2 overflow-auto f7 h5">
+            <div
+              v-for="(user, index) in users"
+              :key="index"
+              class="flex flex-row items-center w-100 bb pv3 ph2 hover-bg-gold pointer"
+            >
+              <div class="w-30 ttc truncate">
+                {{ user.name }}
+              </div>
+              <div class="w-25 pl3">
+                {{ user.email }}
+                <span class="db bt">{{ user.mobile }}</span>
+              </div>
+              <div class="flex justify-between w-50">
+                <div class=""></div>
+                <div class="bg-gold hover-bg-near-white pa2 fw4 br3" @click="showPopup(index)">View Question</div>
+              </div>
+              <popupuser
+                :label=user
+                :editable="false"
+                v-if="isPopup && currentIndex == index"
+                @showPopup="showPopup"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -34,62 +53,32 @@
 </template>
 
 <script>
+import { getUsers } from "../utils/data";
+import popupuser from "../components/reuseables/popup-user.vue";
+
 export default {
-  name: 'Home',
-  data(){
-    return{
-      isComplete: false,
-      deadline: new Date("oct 14, 2023 11:59:59"), daysSpan:'', hoursSpan: '', minutesSpan: '', secondsSpan: '', timeinterval: ''
-    }
+  name: "User",
+  data() {
+    return {
+      users: [],
+      isPopup: false,
+      currentIndex: null
+    };
   },
-  mounted(){
-    this.getCountdown()
+  components: {popupuser},
+  async mounted() {
+    this.storeUserList();
   },
   methods: {
-    getCountdown(){      
-      this.initializeClock('clockdiv', this.deadline);
+    showPopup(index) {
+      this.isPopup = !this.isPopup;
+      this.currentIndex = index;
     },
-    getTimeRemaining() {
-      const total = Date.parse(this.deadline) - Date.parse(new Date());
-      const seconds = Math.floor((total / 1000) % 60);
-      const minutes = Math.floor((total / 1000 / 60) % 60);
-      const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-      const days = Math.floor(total / (1000 * 60 * 60 * 24));
-      
-      return {
-        total,
-        days,
-        hours,
-        minutes,
-        seconds
-      };
+    async storeUserList() {
+      const app = this;
+      app.users = await getUsers();
+      return;
     },
-
-    initializeClock(id,) {
-      const clock = document.getElementById(id);
-      this.daysSpan = clock.querySelector('.days');
-      this.hoursSpan = clock.querySelector('.hours');
-      this.minutesSpan = clock.querySelector('.minutes');
-      this.secondsSpan = clock.querySelector('.seconds');
-      
-      this.updateClock();
-      
-      this.timeinterval = setInterval(this.updateClock, 1000);
-    },
-    updateClock() {
-        const t = this.getTimeRemaining(this.deadline);
-
-        this.daysSpan.innerHTML = t.days;
-        this.hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-        this.minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-        this.secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-        if (t.total <= 0) {
-          this.isComplete = true;
-          clearInterval(this.timeinterval);
-        }
-      }
-
-  }
-}
+  },
+};
 </script>

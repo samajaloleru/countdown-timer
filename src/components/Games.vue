@@ -3,7 +3,7 @@
     <div class="w-100 pa4 dt vh-100 gold">
       <div class="dtc w-100 v-mid">
         <div class="flex items-center justify-between w-100 pa1">
-          <router-link to="/" class="fl mt3 no-underline near-white hover-bg-gold hover-near-black w-auto pa3 b br2">
+          <router-link to="/" class="fl mt3 no-underline near-white hover-bg-gold hover-near-black w-auto pa3 b br2fl mt3 no-underline gold hover-bg-gold hover-near-black w-auto pa3 b br2">
             Go To Home
           </router-link>
   

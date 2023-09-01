@@ -1,4 +1,7 @@
 <template>
+  <video id="myVideo" autoplay muted loop>
+    <source src="../assets/img/bg-video.mp4" type="video/mp4">
+  </video>
   <div class="w-100 pa4-ns pa2 dt vh-100 gold">
     
     <div class="dtc w-100 v-mid">

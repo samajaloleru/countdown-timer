@@ -1,5 +1,5 @@
 import { client } from '../utils/client';
-import { userQueryByEmail, userQueryByMobile } from "./clientQuery";
+import { allUserQuery, userQueryByEmail, userQueryByMobile } from "./clientQuery";
 
 
 export const getUserByEmail = async (email) => {
@@ -20,6 +20,17 @@ export const getUserByMobile = async (mobile) => {
     await client.fetch(query)
     .then((data) => {
         result = data[0];
+    })
+    return result;
+}
+
+export const getUsers = async () => {
+    let result
+    const query = allUserQuery();
+    
+    await client.fetch(query)
+    .then((data) => {
+        result = data;
     })
     return result;
 }
