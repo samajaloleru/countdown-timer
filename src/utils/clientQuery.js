@@ -62,7 +62,7 @@ export const allUserQuery = () => {
     name,
     parish,
     question,
-  } | order(_createdAt desc)`;
+  } | order(_createdAt asc)`;
   return query;
 };
 
