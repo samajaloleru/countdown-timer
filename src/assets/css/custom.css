@@ -40,6 +40,9 @@ input:-webkit-autofill:active {
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-image: url("../img/bg-img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .heartbeat {
