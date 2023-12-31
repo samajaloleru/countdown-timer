@@ -16,30 +16,30 @@
         </div>
         <div class="fl w-100 f5 tc orange">
           <div class="cf mw7-ns mw5 mv4 mv0-ns tc center">
-            <div id="clockdiv" class="relative flex heartbeat flex-row items-center justify-center">
+            <div id="clockdiv" class="relative flex flex-row items-center justify-center">
               <div class="w-auto pa3 hover-near-white br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b days"></div>
                 <div class="fl w-100 f3-ns f4 b">Days</div>
               </div> 
               <div class="w-auto">
-                <div class="fl w-100 f-subheadline">:</div>
+                <div class="fl w-100 f1">:</div>
               </div> 
               <div class="w-auto pa3 hover-near-white br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b hours">00</div>
                 <div class="fl w-100 f3-ns f4 b">Hours</div>
               </div>
               <div class="w-auto">
-                <div class="fl w-100 f-subheadline">:</div>
+                <div class="fl w-100 f1">:</div>
               </div>
               <div class="w-auto pa3 hover-near-white br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b minutes">00</div>
                 <div class="fl w-100 f3-ns f4 b">Minutes</div>
               </div>
               <div class="w-auto">
-                <div class="fl w-100 f-subheadline">:</div>
+                <div class="fl w-100 f1">:</div>
               </div>
               <div class="w-auto pa3 hover-near-white br4">
-                <div class="fl w-100 f-headline-l f-6-m f2 b seconds">00</div>
+                <div class="fl w-100 f-headline-l f-6-m f2 b seconds heartbeat">00</div>
                 <div class="fl w-100 f3-ns f4 b">Seconds</div>
               </div>
             </div>
