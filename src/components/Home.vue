@@ -56,7 +56,7 @@
         <video id="myVideo" autoplay muted loop>
           <source src="../assets/img/bg-video2.mp4" type="video/mp4">
         </video>
-        <div class="fl w-100 f-headline heartbeat b tc orange">
+        <div class="fl w-100 f-headline-l  f1 heartbeat b tc orange">
           Happy New Year!
           <div class="white pt3">Welcome to 2024</div>
         </div>
