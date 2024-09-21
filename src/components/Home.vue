@@ -18,28 +18,28 @@
           <div class="cf mw7-ns mw5 tc center">
             <div id="clockdiv" class="relative flex flex-row items-center justify-center">
               <div class="w-auto pa3 yellow br4">
-                <div class="fl w-100 f-headline-l f-6-m f2 b days"></div>
+                <div class="fl w-100 f-headline-l f6-m f2 b days"></div>
                 <div class="fl w-100 f3-ns f6 b">Days</div>
               </div> 
               <div class="w-auto">
                 <div class="fl w-100 f1 yellow">:</div>
               </div> 
               <div class="w-auto pa3 yellow br4">
-                <div class="fl w-100 f-headline-l f-6-m f2 b hours">00</div>
+                <div class="fl w-100 f-headline-l f6-m f2 b hours">00</div>
                 <div class="fl w-100 f3-ns f6 b">Hours</div>
               </div>
               <div class="w-auto">
                 <div class="fl w-100 f1 yellow">:</div>
               </div>
               <div class="w-auto pa3 yellow br4">
-                <div class="fl w-100 f-headline-l f-6-m f2 b minutes">00</div>
+                <div class="fl w-100 f-headline-l f6-m f2 b minutes">00</div>
                 <div class="fl w-100 f3-ns f6 b">Minutes</div>
               </div>
               <div class="w-auto">
                 <div class="fl w-100 f1  yellow">:</div>
               </div>
               <div class="w-auto pa3 white br4">
-                <div class="fl w-100 f-headline-l f-6-m f2 b seconds heartbeat">00</div>
+                <div class="fl w-100 f-headline-l f6-m f2 b seconds heartbeat">00</div>
                 <div class="fl w-100 f3-ns f6 b yellow">Seconds</div>
               </div>
             </div>
