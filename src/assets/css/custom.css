@@ -45,6 +45,13 @@ body {
     background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 30em) {
+        body{
+                background-size:contain;
+                background-image: url("../img/bg-img2.jpeg");
+        }
+}
+
 .heartbeat {
 	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
 	        animation: heartbeat 1.5s ease-in-out infinite both;
