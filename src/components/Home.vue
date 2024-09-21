@@ -2,43 +2,43 @@
   <div class="cf center mw8">
     <div class="w-100 pa4 dt vh-100 near-white">
       <div class="dtc w-100 v-mid" v-if="!isComplete">
-        <div class="flex items-center justify-between w-100 pa1">
-          <router-link to="/games" class="fl mt3 no-underline near-white hover-bg-near-white hover-orange w-auto pa3 b br2">
+        <div class="fl items-center justify-between w-100 pa1">
+          <!-- <router-link to="/games" class="fl mt3 no-underline purple bg-yellow hover-orange w-auto pa3 b br2">
             Play Games
-          </router-link>
+          </router-link> -->
   
           <span class="fr right-0">
             <img class="w5" src="../assets/img/logo.png"/>
           </span>
         </div>
-        <div class="fl w-100 b f1-ns f5 tc near-white">
+        <!-- <div class="fl w-100 b f1-ns f5 tc near-white">
           Countdown to End of the Year 2023
-        </div>
+        </div> -->
         <div class="fl w-100 f5 tc orange">
           <div class="cf mw7-ns mw5 mv4 mv0-ns tc center">
             <div id="clockdiv" class="relative flex flex-row items-center justify-center">
-              <div class="w-auto pa3 near-white br4">
+              <div class="w-auto pa3 yellow br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b days"></div>
                 <div class="fl w-100 f3-ns f4 b">Days</div>
               </div> 
               <div class="w-auto">
-                <div class="fl w-100 f1  near-white">:</div>
+                <div class="fl w-100 f1 yellow">:</div>
               </div> 
-              <div class="w-auto pa3 near-white br4">
+              <div class="w-auto pa3 yellow br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b hours">00</div>
                 <div class="fl w-100 f3-ns f4 b">Hours</div>
               </div>
               <div class="w-auto">
-                <div class="fl w-100 f1 near-white">:</div>
+                <div class="fl w-100 f1 yellow">:</div>
               </div>
-              <div class="w-auto pa3 near-white br4">
+              <div class="w-auto pa3 yellow br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b minutes">00</div>
                 <div class="fl w-100 f3-ns f4 b">Minutes</div>
               </div>
               <div class="w-auto">
-                <div class="fl w-100 f1  near-white">:</div>
+                <div class="fl w-100 f1  yellow">:</div>
               </div>
-              <div class="w-auto pa3 near-white br4">
+              <div class="w-auto pa3 white br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b seconds heartbeat">00</div>
                 <div class="fl w-100 f3-ns f4 b">Seconds</div>
               </div>
@@ -47,7 +47,7 @@
         </div>
   
         <div class="fl w-100 center tc mt5">
-          <router-link to="/register" class="bg-near-white hover-bg-orange pointer mt3 w-auto orange hover-near-white br2 b f4-ns f5 grow ttc no-underline ph5 pa2">
+          <router-link to="/register" class="bg-yellow hover-bg-purple pointer mt3 w-auto purple hover-yellow br2 b f4-ns f5 grow ttc no-underline ph5 pa2">
             Click to register
           </router-link>
         </div>
@@ -71,7 +71,7 @@ export default {
   data(){
     return{
       isComplete: false,
-      deadline: new Date("dec 31, 2024 23:59:59"), daysSpan:'', hoursSpan: '', minutesSpan: '', secondsSpan: '', timeinterval: ''
+      deadline: new Date("oct 26, 2024 10:59:59"), daysSpan:'', hoursSpan: '', minutesSpan: '', secondsSpan: '', timeinterval: ''
     }
   },
   mounted(){

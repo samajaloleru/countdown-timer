@@ -2,12 +2,12 @@
   <video id="myVideo" autoplay muted loop>
     <source src="../assets/img/bg-video.mp4" type="video/mp4">
   </video>
-  <div class="w-100 pa4-ns pa2 dt vh-100 gold">
+  <div class="w-100 pa4-ns pa2 dt vh-100 purple">
     
     <div class="dtc w-100 v-mid">
       <div class="cf center mw7 mw6-l bg-near-white br3 shadow-3">
         <div class="flex items-center justify-between w-100 pa1">
-          <router-link to="/" class="fl mt3 no-underline hover-bg-gold near-black w-auto pa3 b br2">
+          <router-link to="/" class="fl mt3 no-underline hover-bg-yellow purple w-auto pa3 b br2">
             Go To Home
           </router-link>
   
@@ -15,7 +15,7 @@
             <img class="w5" src="../assets/img/logo.png"/>
           </span>
         </div>
-        <div class="fl w-100 pb2 b f4 tc gold">
+        <div class="fl w-100 pb2 b f4 tc purple">
           Registration
         </div>
         <div class="fl w-100 near-black mv4 pa4-ns pa3">
@@ -53,10 +53,10 @@
             <label class="f7 b">Question</label>
             <textarea class="fl w-100 h3 inputfield2 pt1 pv2 bg-transparent near-black" v-model="form.question"></textarea>
           </div>
-          <div v-if="isSubmit" @click="handleSumbit" class="pointer fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-gold hover-near-black pv3">
+          <div v-if="isSubmit" @click="handleSumbit" class="pointer fl w-100 tc bg-purple b yellow mt4 br2 hover-bg-yellow hover-purple pv3">
             Submit
           </div>
-          <div v-else class="pointer fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-gold hover-near-black pv3">
+          <div v-else class="pointer fl w-100 tc bg-near-black near-white mt4 br2 hover-bg-purple hover-near-black pv3">
             <i class="f7 fas fa-spinner fa-spin"></i> Submiting ...
           </div>
         </div>
