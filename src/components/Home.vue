@@ -47,7 +47,7 @@
         </div>
   
         <div class="fl w-100 center tc mt5">
-          <router-link to="/register" class="bg-near-white dn hover-bg-orange pointer mt3 w-auto orange hover-near-white br2 b f4-ns f5 grow ttc no-underline ph5 pa2">
+          <router-link to="/register" class="bg-near-white hover-bg-orange pointer mt3 w-auto orange hover-near-white br2 b f4-ns f5 grow ttc no-underline ph5 pa2">
             Click to register
           </router-link>
         </div>
@@ -71,7 +71,7 @@ export default {
   data(){
     return{
       isComplete: false,
-      deadline: new Date("dec 31, 2023 23:59:59"), daysSpan:'', hoursSpan: '', minutesSpan: '', secondsSpan: '', timeinterval: ''
+      deadline: new Date("dec 31, 2024 23:59:59"), daysSpan:'', hoursSpan: '', minutesSpan: '', secondsSpan: '', timeinterval: ''
     }
   },
   mounted(){
