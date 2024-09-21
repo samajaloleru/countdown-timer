@@ -1,6 +1,6 @@
 <template>
   <div class="cf center mw8">
-    <div class="w-100 pa4 dt vh-100 near-white">
+    <div class="w-100 dt vh-100 near-white">
       <div class="dtc w-100 v-mid" v-if="!isComplete">
         <div class="fl items-center justify-between w-100 pa1 pt1-ns pt3">
           <!-- <router-link to="/games" class="fl mt3 no-underline purple bg-yellow hover-orange w-auto pa3 b br2">
@@ -14,32 +14,32 @@
         <!-- <div class="fl w-100 b f1-ns f5 tc near-white">
           Countdown to End of the Year 2023
         </div> -->
-        <div class="fl w-100 f5 tc orange">
+        <div class="fl w-100 f5 tc bg-purple">
           <div class="cf mw7-ns mw5 tc center">
-            <div id="clockdiv" class="relative flex flex-row items-center justify-center">
+            <div id="clockdiv" class="flex flex-row items-center justify-center">
               <div class="w-auto pa3 yellow br4">
-                <div class="fl w-100 f-headline-l f6-m f2 b days"></div>
+                <div class="fl w-100 f-subheadline-l f1 b days"></div>
                 <div class="fl w-100 f3-ns f6 b">Days</div>
               </div> 
               <div class="w-auto">
                 <div class="fl w-100 f1 yellow">:</div>
               </div> 
               <div class="w-auto pa3 yellow br4">
-                <div class="fl w-100 f-headline-l f6-m f2 b hours">00</div>
+                <div class="fl w-100 f-subheadline-l f1 b hours">00</div>
                 <div class="fl w-100 f3-ns f6 b">Hours</div>
               </div>
               <div class="w-auto">
                 <div class="fl w-100 f1 yellow">:</div>
               </div>
               <div class="w-auto pa3 yellow br4">
-                <div class="fl w-100 f-headline-l f6-m f2 b minutes">00</div>
+                <div class="fl w-100 f-subheadline-l f1 b minutes">00</div>
                 <div class="fl w-100 f3-ns f6 b">Minutes</div>
               </div>
               <div class="w-auto">
                 <div class="fl w-100 f1  yellow">:</div>
               </div>
               <div class="w-auto pa3 white br4">
-                <div class="fl w-100 f-headline-l f6-m f2 b seconds heartbeat">00</div>
+                <div class="fl w-100 f-subheadline-l f1 b seconds heartbeat">00</div>
                 <div class="fl w-100 f3-ns f6 b yellow">Seconds</div>
               </div>
             </div>
