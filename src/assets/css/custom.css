@@ -47,7 +47,8 @@ body {
 
 @media screen and (max-width: 30em) {
         body{
-                background-size:contain;
+                background-size: cover;
+                background-position:center;
                 background-image: url("../img/bg-img2.jpeg");
         }
 }

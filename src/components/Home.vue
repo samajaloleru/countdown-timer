@@ -2,20 +2,20 @@
   <div class="cf center mw8">
     <div class="w-100 pa4 dt vh-100 near-white">
       <div class="dtc w-100 v-mid" v-if="!isComplete">
-        <div class="fl items-center justify-between w-100 pa1">
+        <div class="fl items-center justify-between w-100 pa1 pt1-ns pt3">
           <!-- <router-link to="/games" class="fl mt3 no-underline purple bg-yellow hover-orange w-auto pa3 b br2">
             Play Games
           </router-link> -->
   
-          <span class="fr right-0">
+          <div class="fr-ns right-0-ns">
             <img class="w5" src="../assets/img/logo.png"/>
-          </span>
+          </div>
         </div>
         <!-- <div class="fl w-100 b f1-ns f5 tc near-white">
           Countdown to End of the Year 2023
         </div> -->
         <div class="fl w-100 f5 tc orange">
-          <div class="cf mw7-ns mw5 mv4 mv0-ns tc center">
+          <div class="cf mw7-ns mw5 tc center">
             <div id="clockdiv" class="relative flex flex-row items-center justify-center">
               <div class="w-auto pa3 yellow br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b days"></div>
