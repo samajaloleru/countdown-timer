@@ -16,30 +16,30 @@
         </div>
         <div class="fl w-100 f5 tc orange">
           <div class="cf mw7-ns mw5 mv4 mv0-ns tc center">
-            <div id="clockdiv" class="relative flex heartbeat flex-row items-center justify-center">
-              <div class="w-auto pa3 hover-near-white br4">
+            <div id="clockdiv" class="relative flex flex-row items-center justify-center">
+              <div class="w-auto pa3 near-white br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b days"></div>
                 <div class="fl w-100 f3-ns f4 b">Days</div>
               </div> 
               <div class="w-auto">
-                <div class="fl w-100 f-subheadline">:</div>
+                <div class="fl w-100 f1  near-white">:</div>
               </div> 
-              <div class="w-auto pa3 hover-near-white br4">
+              <div class="w-auto pa3 near-white br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b hours">00</div>
                 <div class="fl w-100 f3-ns f4 b">Hours</div>
               </div>
               <div class="w-auto">
-                <div class="fl w-100 f-subheadline">:</div>
+                <div class="fl w-100 f1 near-white">:</div>
               </div>
-              <div class="w-auto pa3 hover-near-white br4">
+              <div class="w-auto pa3 near-white br4">
                 <div class="fl w-100 f-headline-l f-6-m f2 b minutes">00</div>
                 <div class="fl w-100 f3-ns f4 b">Minutes</div>
               </div>
               <div class="w-auto">
-                <div class="fl w-100 f-subheadline">:</div>
+                <div class="fl w-100 f1  near-white">:</div>
               </div>
-              <div class="w-auto pa3 hover-near-white br4">
-                <div class="fl w-100 f-headline-l f-6-m f2 b seconds">00</div>
+              <div class="w-auto pa3 near-white br4">
+                <div class="fl w-100 f-headline-l f-6-m f2 b seconds heartbeat">00</div>
                 <div class="fl w-100 f3-ns f4 b">Seconds</div>
               </div>
             </div>
@@ -56,7 +56,7 @@
         <video id="myVideo" autoplay muted loop>
           <source src="../assets/img/bg-video2.mp4" type="video/mp4">
         </video>
-        <div class="fl w-100 f-headline heartbeat b tc orange">
+        <div class="fl w-100 f-headline-l  f1 heartbeat b tc orange">
           Happy New Year!
           <div class="white pt3">Welcome to 2024</div>
         </div>
